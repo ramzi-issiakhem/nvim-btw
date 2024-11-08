@@ -50,7 +50,7 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- Disable folding
-vim.opt.foldenable = true
+vim.opt.foldenable = false
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
