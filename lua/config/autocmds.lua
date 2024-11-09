@@ -1,6 +1,7 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
+local notify = require("notify")
 
 -- Define an autocmd group for the blade workaround
 local augroup = vim.api.nvim_create_augroup("lsp_blade_workaround", { clear = true })
@@ -31,6 +32,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end)
   end,
 })
+
+vim.api.nvim_create_user_command("FormatToggle", function()
+  -- Toggle format on save globally
+  vim.g.disable_autoformat = not vim.g.disable_autoformat
+
+  if vim.g.disable_autoformat then
+    notify("Autoformat-on-save disabled globally", "info")
+  else
+    notify("Autoformat-on-save enabled globally", "info")
+  end
+end, { desc = "Toggle autoformat-on-save" })
 
 -- make $ part of the keyword for php.
 vim.api.nvim_exec(

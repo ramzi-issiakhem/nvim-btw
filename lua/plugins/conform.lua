@@ -1,6 +1,20 @@
 local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
+  format_on_save = function(bufnr)
+    return nil
+  end,
+  lazy = false,
+  keys = {
+    {
+      "<leader>F",
+      function()
+        require("conform").format({ async = true, lsp_fallback = true })
+      end,
+      mode = "n",
+      desc = "[F]ormat [b]uffer",
+    },
+  },
   opts = function()
     ---@type conform.setupOpts
     local opts = {
