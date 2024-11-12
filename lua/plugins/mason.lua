@@ -22,6 +22,7 @@ return {
       "php-debug-adapter",
       "phpstan",
       "pint",
+      "phpactor",
       "prettierd",
       "pyright",
       "rustywind",

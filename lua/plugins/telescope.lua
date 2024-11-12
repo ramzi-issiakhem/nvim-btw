@@ -2,7 +2,7 @@ return {
   "nvim-telescope/telescope.nvim",
   keys = {
     { "<leader>/", false },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "[A]ll [F]iles"},
+    { "<leader>ff",  "<cmd>Telescope find_files no_ignore=true<cr>", desc = "[A]ll [F]iles"},
     {"<leader>sS", function() require('telescope.builtin').search_history() end,  desc = "[S]earch [H]istory"  },
     { "<leader>ss", function() require("telescope.builtin").builtin() end, desc = "[S]earch [S]elect Telescope" },
     { "<leader>sh", function() require("telescope.builtin").help_tags() end, desc = "[S]earch [H]elp" },
